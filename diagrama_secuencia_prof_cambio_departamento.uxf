@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>319</x>
+      <y>0</y>
+      <w>880</w>
+      <h>990</h>
+    </coordinates>
+    <panel_attributes>title=Profesor cambia de departamento
+obj=Profesor~a ACTOR EXECUTION
+obj=Universidad~b ACTIVE
+obj=Profesor~c ACTIVE
+
+a-&gt;b : cambiar_departamento();
+
+a: t
+on=b
+b: buscar_profesor();
+off=b
+
+combinedFragment=alt~
+	id2:[found]
+	tick=
+	id2-&gt;id3: cambiar_departamento()
+	
+	combinedFragment=alt~
+	id3:[departamento exists]
+	tick=
+	on=c
+	c: cambiar_departamento();
+	off=c
+..
+	id3:[departamento not exists]
+	tick=
+	id3-&gt;id1: ProfesorDepartamentoError
+--
+	id2:[not found]
+	tick=
+	id2-&gt;id1: ProfesorNoExisteException
+--
+off=a;</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

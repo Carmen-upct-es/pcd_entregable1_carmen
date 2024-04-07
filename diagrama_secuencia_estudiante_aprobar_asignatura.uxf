@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>13</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>234</x>
+      <y>65</y>
+      <w>1040</w>
+      <h>832</h>
+    </coordinates>
+    <panel_attributes>title=Estudiante aprueba una asignatura
+obj=Estudiante~a ACTOR EXECUTION
+obj=Universidad~b ACTIVE
+obj=Estudiante~c ACTIVE
+
+a-&gt;b : aprobar_asignatura();
+
+a: t
+on=b
+b: buscar_estudiante();
+off=b
+
+combinedFragment=alt~
+	id2:[found]
+	tick=
+	id2-&gt;id3: aprobar_asignatura()
+	tick=
+..
+	id2:[not found]
+	tick=
+	id2-&gt;id1: EstudianteNoExisteException
+--
+off=a;</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

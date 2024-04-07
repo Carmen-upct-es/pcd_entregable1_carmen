@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>13</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>260</x>
+      <y>52</y>
+      <w>988</w>
+      <h>832</h>
+    </coordinates>
+    <panel_attributes>title=Profesor obtiene su departamento
+obj=Profesor~a ACTOR EXECUTION
+obj=Universidad~b ACTIVE
+obj=Profesor~c ACTIVE
+
+a-&gt;b : obtener_departamento();
+
+a: t
+on=b
+b: buscar_profesor();
+off=b
+
+combinedFragment=alt~
+	id2:[found]
+	tick=
+	id2-&gt;id3: obtener_departamento()
+	tick=
+..
+	id2:[not found]
+	tick=
+	id2-&gt;id1: ProfesorNoExisteException
+--
+off=a;</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
